@@ -52,6 +52,6 @@ NavBar.propTypes={
 }
 
 NavBar.defaultProps = {
-  title: "Navbar title is not passed here!",
-  aboutText: "About text is not passed here!"
+  title: "TextUtils",
+  aboutText: "About"
 }
