@@ -25,7 +25,7 @@ function TextForm(props) {
   const handleOnChange = (event) => {
   
     setText(event.target.value)
-    console.log({text})
+    // console.log({text})
   }
   return (
     <div>
