@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import "./TextForm.css"
-// import PropTypes from 'prop-types'
 
 function TextForm(props) {
 
