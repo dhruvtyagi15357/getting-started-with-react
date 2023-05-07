@@ -37,7 +37,6 @@ function TextForm(props) {
     };
 
     setText(newText);
-  
   }
   
   const handleOnChange = (event) => {
@@ -48,6 +47,17 @@ function TextForm(props) {
     // console.log({text})
   }
 
+  const copyText  = () => {
+    let textContent = document.getElementById("myBox").value;
+    navigator.clipboard.writeText(textContent)
+    alert("Text copied!")
+  }
+
+  const handleExtraSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    newText = newText.join(' ');
+    setText(newText);
+  }
 
   return (
     <>
@@ -57,9 +67,11 @@ function TextForm(props) {
           <textarea className="form-control" id="myBox" rows="10" value={text} onChange={handleOnChange}></textarea>
         </div>
 
-        <button className="btn btn-primary mx-1" onClick={handleUClick}>Convert to uppercase</button>
-        <button className='btn btn- btn-primary mx-1' onClick={handleLClick}>convert to lowercase</button>
-        <button className='btn btn- btn-primary mx-1' onClick={handleAltClick}>convert to AlTeRnAtInGcAsE</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUClick}>Convert to uppercase</button>
+        <button className='btn btn-primary mx-1 my-1' onClick={handleLClick}>convert to lowercase</button>
+        <button className='btn btn-primary mx-1 my-1' onClick={handleAltClick}>convert to AlTeRnAtInGcAsE</button>
+        <button className='btn btn-primary mx-1 my-1' onClick={copyText}>Copy Text</button>
+        <button className='btn btn-primary mx-1 my-1' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
       </div>
 
       <div className="container">

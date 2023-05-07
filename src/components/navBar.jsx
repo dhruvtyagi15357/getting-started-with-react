@@ -18,30 +18,19 @@ function NavBar(props) {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
-            </li>
-
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Another action</a></li>
-                <li><hr className="dropdown-divider"/></li>
-                <li><a className="dropdown-item" href="#">{props.aboutText}</a></li>
-              </ul>
-            </li>
-          
-            <li className="nav-item">
-              <a className="nav-link disabled">Disabled</a>
+              <a className="nav-link active" aria-current="page" href="#">About</a>
             </li>
           </ul>
         
-          <form className="d-flex" role="search">
+          {/* <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> */}
+
+          <div className="form-check form-switch">
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Default switch checkbox input</label>
+          </div>
         </div>
       </div>
     </nav>
@@ -53,7 +42,7 @@ export default NavBar
 
 NavBar.propTypes={
   title: PropTypes.string,
-  aboutText: PropTypes.string
+  // aboutText: PropTypes.string
 }
 
 NavBar.defaultProps = {
