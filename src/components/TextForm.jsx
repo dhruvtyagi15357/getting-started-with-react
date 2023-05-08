@@ -61,10 +61,10 @@ function TextForm(props) {
 
   return (
     <>
-      <div className='container'>
+      <div className={`container bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`}>
         <h1>{props.heading}</h1>
         <div className="mb-3">  
-          <textarea className="form-control" id="myBox" rows="10" value={text} onChange={handleOnChange}></textarea>
+          <textarea className={`form-control bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`} id="myBox" rows="10" value={text} onChange={handleOnChange}></textarea>
         </div>
 
         <button className="btn btn-primary mx-1 my-1" onClick={handleUClick}>Convert to uppercase</button>
@@ -74,7 +74,7 @@ function TextForm(props) {
         <button className='btn btn-primary mx-1 my-1' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
       </div>
 
-      <div className="container">
+      <div className={`container bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`} style={{borderRadius: "10px"}}>
         <h1>Your text summary: </h1>
         <p>Words: {wordCount}</p>
         <p>Characters: {text.length}</p>

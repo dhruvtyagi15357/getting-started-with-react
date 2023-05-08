@@ -3,8 +3,10 @@ import './App.css'
 import NavBar from './components/NavBar'
 import TextForm from './components/TextForm'
 import AboutPage from './components/About'
+import { useState } from "react";
 
 function App() {
+
   let name="TextUtils";
   let aboutText=`Welcome to our text analysis website! Our website is designed to help you analyze any text quickly and easily. With a variety of useful features, you can make the most of your text in no time.
 
@@ -23,16 +25,32 @@ function App() {
   
   let heading="Enter the text to analyze: ";
 
+  const [darkTheme, setTheme] = useState(false);
+
+  const toggleTheme = ()=>{
+    setTheme(!darkTheme)
+  }
+
+
+  
+  function componentDidMount() {
+    document.body.style.backgroundColor = darkTheme?"#282C34":"white"
+  }
+
+  componentDidMount();
+  
+
   return (
-      <>
-        <NavBar title={name} aboutText={aboutText} />
-        {/* <div className="container my-3">
-          <TextForm heading={heading}/>
-        </div> */}
+      <div>
+        <NavBar title={name} aboutText={aboutText} darkTheme={darkTheme} toggleTheme={toggleTheme}/>
+        
+        <div className="container my-3">
+          <TextForm heading={heading} darkTheme={darkTheme}/>
+        </div>
 
-        <AboutPage aboutText={aboutText}/>
+        {/* <AboutPage aboutText={aboutText}  darkTheme={darkTheme}/> */}
 
-      </>
+      </div>
   )
 }
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function NavBar(props) {
   return (
   <>
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className={`navbar navbar-expand-lg navbar-${props.darkTheme?"dark":"light"} bg-${props.darkTheme?"dark":"light"}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">{props.title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,8 +28,8 @@ function NavBar(props) {
           </form> */}
 
           <div className="form-check form-switch">
-            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Default switch checkbox input</label>
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleTheme}/>
+            <label className={`form-check-label text-${props.darkTheme?"light":"dark"}`} htmlFor="flexSwitchCheckDefault">Toggle theme</label>
           </div>
         </div>
       </div>
