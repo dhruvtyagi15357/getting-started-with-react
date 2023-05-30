@@ -61,7 +61,7 @@ function TextForm(props) {
 
   return (
     <>
-      <div className={`container bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`}>
+      <div className={`container bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`} style={{borderRadius: '20px'}}>
         <h1>{props.heading}</h1>
         <div className="mb-3">  
           <textarea className={`form-control bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`} id="myBox" rows="10" value={text} onChange={handleOnChange}></textarea>
