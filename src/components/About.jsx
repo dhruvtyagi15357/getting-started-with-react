@@ -30,7 +30,7 @@ function About(props) {
                             </div>
                         </div>
                 </div>
-                {/* <div className={`accordion-item bg-${props.darkTheme?"dark":"light"}`}>
+                <div className={`accordion-item bg-${props.darkTheme?"dark":"light"}`}>
                     <h2 className="accordion-header">
                         <button
                             className={`accordion-button text-${props.darkTheme?"light":"dark"} bg-${props.darkTheme?"dark":"light"} collapsed`}
@@ -53,7 +53,7 @@ function About(props) {
                             <strong>This is the second item's accordion body.</strong>
                         </div>
                     </div>
-                </div> */}
+                </div>
             
             </div>
         </div>
