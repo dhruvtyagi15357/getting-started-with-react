@@ -10,15 +10,15 @@ function TextForm(props) {
   const handleUClick = () => {
     let textU = text;
     textU = textU.toUpperCase();
-    setText(textU)
-  
+    setText(textU);
+    props.showAlert("Converted to UPPERCASE!", "success");
   }
 
   const handleLClick = () => {
     let textL = text;
     textL = textL.toLowerCase();
     setText(textL);
-  
+    props.showAlert("CONVERTED TO lowercase!", "success");  
   }
 
   const handleAltClick = () => {
@@ -32,11 +32,11 @@ function TextForm(props) {
       else{
         element = element.toUpperCase();
       }
-
       newText+=element;
     };
 
     setText(newText);
+    props.showAlert("CoNvErTeD To AlTeRnATiNgCaSe!", "success");
   }
   
   const handleOnChange = (event) => {
@@ -50,13 +50,14 @@ function TextForm(props) {
   const copyText  = () => {
     let textContent = document.getElementById("myBox").value;
     navigator.clipboard.writeText(textContent)
-    alert("Text copied!")
+    props.showAlert("Text copied | deipoc txeT!", "success");
   }
 
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     newText = newText.join(' ');
     setText(newText);
+    props.showAlert("Extra spaces   removed!", "success");
   }
 
   return (
