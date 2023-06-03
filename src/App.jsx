@@ -31,6 +31,7 @@ function App() {
   const toggleTheme = ()=>{
     setTheme(!darkTheme)
     showAlert(`${!darkTheme?'Dark':'Light'} theme has been enabled!`, "success")
+    document.title = `TextUtils - ${!darkTheme?'Dark':'Light'} mode`
   }
 
   const [alert, setAlert] = useState(null)
