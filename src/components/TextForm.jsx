@@ -40,10 +40,16 @@ function TextForm(props) {
   }
   
   const handleOnChange = (event) => {
-  
+    
     setText(event.target.value)
-    setwordCount(text === ''?0:text.split(' ').length)
-    setsentenceCount(text === ''?0:text.split('.').length)
+
+    let newText = text.split(/[ ]+/);
+    newText = newText.join(' ');
+    setwordCount(text === ''?0:newText.split(' ').length)
+
+    newText = text.split(/[.]+/);
+    newText = newText.join('.');
+    setsentenceCount(text === ''?0:newText.split('.').length)
     // console.log({text})
   }
 
