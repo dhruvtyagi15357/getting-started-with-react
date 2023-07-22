@@ -67,7 +67,7 @@ function TextForm(props) {
   }
 
   return (
-    <>
+    <div className="container my-5">
       <div className={`container bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`} style={{borderRadius: '20px'}}>
         <h1>{props.heading}</h1>
         <div className="mb-3">  
@@ -88,7 +88,7 @@ function TextForm(props) {
         <p>Sentences: {sentenceCount}</p>
         <h6>Time required to read the text: {(1/200) * wordCount} minuites</h6>
       </div>
-    </>
+    </div>
   )
 }
 

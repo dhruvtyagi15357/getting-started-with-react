@@ -5,6 +5,12 @@ import TextForm from './components/TextForm'
 import AboutPage from './components/About'
 import Alert from './components/alert'
 import { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 
 function App() {
 
@@ -54,17 +60,21 @@ function App() {
   componentDidMount();
   
 
-  return (
-      <div>
-        <NavBar title={name} aboutText={aboutText} darkTheme={darkTheme} toggleTheme={toggleTheme}/>
-        <Alert alert={alert}/>       
-        <div className="container my-3">
-          <TextForm heading={heading} darkTheme={darkTheme} showAlert={showAlert}/>
-        </div>
 
-        <AboutPage aboutText={aboutText}  darkTheme={darkTheme}/>
-      </div>
-  )
+  return (
+      <Router>
+        <NavBar title={name} aboutText={aboutText} darkTheme={darkTheme} toggleTheme={toggleTheme} />
+        <Switch >
+          <Route exact path="/about">
+            <AboutPage aboutText={aboutText} darkTheme={darkTheme} />
+          </Route>
+
+          <Route exact path="/">
+            <TextForm heading={heading} darkTheme={darkTheme} showAlert={showAlert} />
+          </Route>
+        </Switch>
+      </Router>
+  );
 }
 
 export default App
