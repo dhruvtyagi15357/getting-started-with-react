@@ -32,7 +32,7 @@ function App() {
   
   let heading="Enter the text to analyze: ";
 
-  const [darkTheme, setTheme] = useState(false);
+  const [darkTheme, setTheme] = useState(true);
 
   const toggleTheme = ()=>{
     setTheme(!darkTheme)
