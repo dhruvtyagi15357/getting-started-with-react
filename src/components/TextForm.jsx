@@ -66,6 +66,11 @@ function TextForm(props) {
     props.showAlert("Extra spaces   removed!", "success");
   }
 
+  const clearText = () => {
+    setText('');
+    handleOnChange();
+  }
+
   return (
     <div className="container my-5">
       <div className={`container bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`} style={{borderRadius: '20px'}}>
@@ -79,6 +84,7 @@ function TextForm(props) {
         <button className='btn btn-primary mx-1 my-1' onClick={handleAltClick}>convert to AlTeRnAtInGcAsE</button>
         <button className='btn btn-primary mx-1 my-1' onClick={copyText}>Copy Text</button>
         <button className='btn btn-primary mx-1 my-1' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+        <button className='btn btn-primary mx-1 my-1' onClick={clearText}>Clear text</button>
       </div>
 
       <div className={`container bg-${props.darkTheme?"dark":"light"} text-${props.darkTheme?"light":"dark"}`} style={{borderRadius: "10px"}}>

@@ -46,8 +46,7 @@ function App() {
     setAlert({
       msg: message,
       type: type
-    })
-
+    });
     setTimeout(() =>{
       setAlert(null);
     }, 1500);
@@ -64,6 +63,7 @@ function App() {
   return (
       <Router>
         <NavBar title={name} aboutText={aboutText} darkTheme={darkTheme} toggleTheme={toggleTheme} />
+        <Alert alert={alert} />
         <Switch >
           <Route exact path="/about">
             <AboutPage aboutText={aboutText} darkTheme={darkTheme} />
